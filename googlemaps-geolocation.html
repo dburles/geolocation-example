@@ -1,0 +1,18 @@
+<head>
+  <title>googlemaps-geolocation</title>
+</head>
+
+<body>
+  <h1>Geolocation example</h1>
+  {{> map}}
+</body>
+
+<template name="map">
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="map" options=mapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
+</template>
